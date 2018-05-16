@@ -35,14 +35,6 @@ gulp.task('bower', function () {
     return bower();
 });
 
-
-//delete dist files
-gulp.task('clean', function (cb) {
-    del([
-        'dist'
-    ], cb)
-});
-
 gulp.task('lint', function () {
     return gulp.src(srcBase + 'public/javascripts/*.js')
         .pipe(jshint())
@@ -111,9 +103,14 @@ gulp.task('pug', ['revReplaceViewLink'], function () {
         .pipe(gulp.dest(destPublic));
 });
 
-gulp.task('compile', ['compileAll', 'pug']);
-// gulp.task('compile', ['clean','compileAll']);
+//delete dist files
+gulp.task('clean', function (cb) {
+    return del([
+        'dist'
+    ], cb)
+});
 
+gulp.task('compile', ['compileAll', 'pug']);
 
 gulp.task('default', ['compile'], function () {
     return gulp.watch([srcBase + '/**'], ['compile'])

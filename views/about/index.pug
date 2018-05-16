@@ -1,0 +1,14 @@
+extends ../includes/layout
+block title
+    title 关于我们页面
+block style
+    link(rel='stylesheet', type='text/css', href='/stylesheets/about.css')
+block content
+    //公共头部
+    include ../includes/header
+    //关于我们内容
+    div.main_about 关于我们
+    //公共底部
+    include ../includes/footer
+block script
+    script(type='javascript', src='/javascripts/about.js')
