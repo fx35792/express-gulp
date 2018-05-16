@@ -1,0 +1,9 @@
+node_modules
+public/lib
+.idea
+*.thumbnail
+*.log
+logs
+npm-debug.log*
+dist
+.DS_Store
