@@ -1,5 +1,25 @@
-extends layout
-
+extends includes/layout
+block title
+    title 网站首页
+block style
+    link(rel='stylesheet',type='text/css', href='/stylesheets/index.css')
+    link(rel='stylesheet',type='text/css', href='/lib/swiper/dist/css/swiper.min.css')
 block content
-  h1= title
-  p Welcome to #{title}
+    //公共头部 navigation
+    include includes/header
+    //首页轮播图
+    div.swiper-container
+        div.swiper-wrapper
+            div.swiper-slide
+                img(src='/images/index/banner1.jpg')
+            div.swiper-slide
+                img(src='/images/index/banner2.jpg')
+            div.swiper-slide
+                img(src='/images/index/banner3.jpg')
+        div.swiper-pagination
+
+    //公共底部 footer
+    include includes/footer
+block script
+    script(src='/lib/swiper/dist/js/swiper.min.js')
+    script(src='/javascripts/index.js')
